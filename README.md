@@ -1,168 +1,571 @@
-## Introduction
+## Loading and preprocessing the data:
 
-It is now possible to collect a large amount of data about personal
-movement using activity monitoring devices such as a
-[Fitbit](http://www.fitbit.com), [Nike
-Fuelband](http://www.nike.com/us/en_us/c/nikeplus-fuelband), or
-[Jawbone Up](https://jawbone.com/up). These type of devices are part of
-the "quantified self" movement -- a group of enthusiasts who take
-measurements about themselves regularly to improve their health, to
-find patterns in their behavior, or because they are tech geeks. But
-these data remain under-utilized both because the raw data are hard to
-obtain and there is a lack of statistical methods and software for
-processing and interpreting the data.
-
-This assignment makes use of data from a personal activity monitoring
-device. This device collects data at 5 minute intervals through out the
-day. The data consists of two months of data from an anonymous
-individual collected during the months of October and November, 2012
-and include the number of steps taken in 5 minute intervals each day.
-
-## Data
-
-The data for this assignment can be downloaded from the course web
-site:
-
-* Dataset: [Activity monitoring data](https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip) [52K]
-
-The variables included in this dataset are:
-
-* **steps**: Number of steps taking in a 5-minute interval (missing
-    values are coded as `NA`)
-
-* **date**: The date on which the measurement was taken in YYYY-MM-DD
-    format
-
-* **interval**: Identifier for the 5-minute interval in which
-    measurement was taken
-
-
-
-
-The dataset is stored in a comma-separated-value (CSV) file and there
-are a total of 17,568 observations in this
-dataset.
-
-
-## Assignment
-
-This assignment will be described in multiple parts. You will need to
-write a report that answers the questions detailed below. Ultimately,
-you will need to complete the entire assignment in a **single R
-markdown** document that can be processed by **knitr** and be
-transformed into an HTML file.
-
-Throughout your report make sure you always include the code that you
-used to generate the output you present. When writing code chunks in
-the R markdown document, always use `echo = TRUE` so that someone else
-will be able to read the code. **This assignment will be evaluated via
-peer assessment so it is essential that your peer evaluators be able
-to review the code for your analysis**.
-
-For the plotting aspects of this assignment, feel free to use any
-plotting system in R (i.e., base, lattice, ggplot2)
-
-Fork/clone the [GitHub repository created for this
-assignment](http://github.com/rdpeng/RepData_PeerAssessment1). You
-will submit this assignment by pushing your completed files into your
-forked repository on GitHub. The assignment submission will consist of
-the URL to your GitHub repository and the SHA-1 commit ID for your
-repository state.
-
-NOTE: The GitHub repository also contains the dataset for the
-assignment so you do not have to download the data separately.
-
-
-
-### Loading and preprocessing the data
-
-Show any code that is needed to
-
-1. Load the data (i.e. `read.csv()`)
-
-2. Process/transform the data (if necessary) into a format suitable for your analysis
-
-
-### What is mean total number of steps taken per day?
-
-For this part of the assignment, you can ignore the missing values in
-the dataset.
-
-1. Make a histogram of the total number of steps taken each day
-
-2. Calculate and report the **mean** and **median** total number of steps taken per day
-
-
-### What is the average daily activity pattern?
-
-1. Make a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-
-2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
-
-
-### Imputing missing values
-
-Note that there are a number of days/intervals where there are missing
-values (coded as `NA`). The presence of missing days may introduce
-bias into some calculations or summaries of the data.
-
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with `NA`s)
-
-2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
-
-3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
-
-4. Make a histogram of the total number of steps taken each day and Calculate and report the **mean** and **median** total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
-
-
-### Are there differences in activity patterns between weekdays and weekends?
-
-For this part the `weekdays()` function may be of some help here. Use
-the dataset with the filled-in missing values for this part.
-
-1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
-
-1. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). The plot should look something like the following, which was created using **simulated data**:
-
-![Sample panel plot](instructions_fig/sample_panelplot.png) 
-
-
-**Your plot will look different from the one above** because you will
-be using the activity monitor data. Note that the above plot was made
-using the lattice system but you can make the same version of the plot
-using any plotting system you choose.
-
-
-## Submitting the Assignment
-
-To submit the assignment:
-
-1. Commit your completed `PA1_template.Rmd` file to the `master` branch of your git repository (you should already be on the `master` branch unless you created new ones)
-
-2. Commit your `PA1_template.md` and `PA1_template.html` files produced by processing your R markdown file with the `knit2html()` function in R (from the **knitr** package)
-
-3. If your document has figures included (it should) then they should have been placed in the `figure/` directory by default (unless you overrode the default). Add and commit the `figure/` directory to your git repository.
-
-4. Push your `master` branch to GitHub.
-
-5. Submit the URL to your GitHub repository for this assignment on the course web site.
-
-In addition to submitting the URL for your GitHub repository, you will
-need to submit the 40 character SHA-1 hash (as string of numbers from
-0-9 and letters from a-f) that identifies the repository commit that
-contains the version of the files you want to submit. You can do this
-in GitHub by doing the following:
-
-1. Go into your GitHub repository web page for this assignment
-
-2. Click on the "?? commits" link where ?? is the number of commits you have in the repository. For example, if you made a total of 10 commits to this repository, the link should say "10 commits".
-
-3. You will see a list of commits that you have made to this repository. The most recent commit is at the very top. If this represents the version of the files you want to submit, then just click the "copy to clipboard" button on the right hand side that should appear when you hover over the SHA-1 hash. Paste this SHA-1 hash into the course web site when you submit your assignment. If you don't want to use the most recent commit, then go down and find the commit you want and copy the SHA-1 hash.
-
-A valid submission will look something like (this is just an **example**!)
+I'm going to read the data, in activity.csv file, assigning NA to missing values, and save in a rowStepData variable:
 
 ```r
-https://github.com/rdpeng/RepData_PeerAssessment1
-
-7c376cc5447f11537f8740af8e07d6facc3d9645
+rowStepData <- read.csv("./activity.csv", header = TRUE, na.strings = "NA")
 ```
+
+
+I'm going to see if the file has been well read, checking the first values
+
+```r
+head(rowStepData)
+```
+
+```
+##   steps       date interval
+## 1    NA 2012-10-01        0
+## 2    NA 2012-10-01        5
+## 3    NA 2012-10-01       10
+## 4    NA 2012-10-01       15
+## 5    NA 2012-10-01       20
+## 6    NA 2012-10-01       25
+```
+
+
+I'm going to see what kind of values contains the variable 'date':
+
+```r
+class(rowStepData$date)
+```
+
+```
+## [1] "factor"
+```
+
+
+Ok. The variable 'date' has been read as a Factor. I need to convert into Date class:
+
+```r
+rowStepData$date <- as.Date(rowStepData$date, format = "%Y-%m-%d")
+```
+
+
+I'm going to check now...
+
+```r
+class(rowStepData$date)
+```
+
+```
+## [1] "Date"
+```
+
+It's OK!!
+
+How many missing value are there in the dataset?
+
+```r
+sum(is.na(rowStepData$step))
+```
+
+```
+## [1] 2304
+```
+
+
+Now, i'm going to created a new dataset removing all missing values:
+
+```r
+ignored_NA_StepData <- rowStepData[!is.na(rowStepData$step), ]
+```
+
+...and going to see if the file has been well read, checking the first values
+
+```r
+head(ignored_NA_StepData)
+```
+
+```
+##     steps       date interval
+## 289     0 2012-10-02        0
+## 290     0 2012-10-02        5
+## 291     0 2012-10-02       10
+## 292     0 2012-10-02       15
+## 293     0 2012-10-02       20
+## 294     0 2012-10-02       25
+```
+
+
+
+## What is mean total number of steps taken per day?
+
+I'm going to calculate the mean of steps per day, ignoring missing values values, so i'm going to used "ignored_NA_StepData" dataset:
+- First i'm going to split the dataset into diferent days:
+
+```r
+splitDataByDate <- split(ignored_NA_StepData$steps, ignored_NA_StepData$date)
+```
+
+- 2th, i'm going to create a vector with all days in dataset:
+
+```r
+allDays <- as.Date(sort(unique(ignored_NA_StepData$date)), format = "%Y-%m-%d")
+```
+
+
+- And now i'm going to calculate sum, mean and median of all step splitted by day:
+
+
+```r
+sumStepByDate <- as.data.frame(sapply(splitDataByDate, sum))
+names(sumStepByDate) <- c("Steps")
+mean(sumStepByDate$Steps)
+```
+
+```
+## [1] 10766
+```
+
+```r
+median(sumStepByDate$Steps)
+```
+
+```
+## [1] 10765
+```
+
+
+I'm going generate a histogram with the frecuency of total sum of steps by day: 
+
+```r
+hist(sumStepByDate$Steps, main = "Total steps by day frecuency", xlab = "Number of steps by day", 
+    ylab = "Number of days", col = "red", breaks = nrow(sumStepByDate))
+```
+
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
+
+..and save it into '/figures/' path:
+
+```r
+png(filename = "figures/plot1.png", width = 480, height = 480, units = "px")
+hist(sumStepByDate$Steps, main = "Total steps by day frecuency", xlab = "Number of steps by day", 
+    ylab = "Number of days", col = "red", breaks = nrow(sumStepByDate))
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
+
+Now, I'm going to create a file with the sum of steps day by day, the mean and the median of all days in dataset:
+
+
+```r
+plot(allDays, sumStepByDate$Steps, type = "l", ylab = "Sum of step", xlab = "Day")
+lines(allDays, rep(median(sumStepByDate$Steps), length(allDays)), type = "l", 
+    col = "blue")
+lines(allDays, rep(mean(sumStepByDate$Steps), length(allDays)), type = "l", 
+    col = "red")
+legend("topright", c("Mean", "Median"), lty = 1, col = c("red", "blue"), cex = 0.95)
+```
+
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14.png) 
+
+
+
+```r
+png(filename = "figures/plot2.png", width = 480, height = 480, units = "px")
+plot(allDays, sumStepByDate$Steps, type = "l", ylab = "Sum of step", xlab = "Day")
+lines(allDays, rep(median(sumStepByDate$Steps), length(allDays)), type = "l", 
+    col = "blue")
+lines(allDays, rep(mean(sumStepByDate$Steps), length(allDays)), type = "l", 
+    col = "red")
+legend("topright", c("Mean", "Median"), lty = 1, col = c("red", "blue"), cex = 0.95)
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
+
+
+Is posible the median line isn't see, because is similar value to mean:
+Mean:
+
+```r
+mean(sumStepByDate$Steps)
+```
+
+```
+## [1] 10766
+```
+
+Median:
+
+```r
+median(sumStepByDate$Steps)
+```
+
+```
+## [1] 10765
+```
+
+
+# What is the average daily activity pattern?
+
+now i'm going to make a Interval segmentation:
+
+```r
+allIntervals <- sort(unique(ignored_NA_StepData$interval))
+splitDataByInterval <- split(ignored_NA_StepData$steps, ignored_NA_StepData$interval)
+```
+
+
+..and calculate the mean for each interval..
+
+```r
+meanStepByInterval <- as.data.frame(sapply(splitDataByInterval, mean))
+names(meanStepByInterval) <- c("Steps")
+```
+
+
+Drawing the solution:
+
+```r
+plot(allIntervals, meanStepByInterval$Steps, type = "l", main = "5-Interval step mean", 
+    xlab = "5-interval", ylab = "Mean of steps")
+lines(allIntervals, rep(max(meanStepByInterval$Steps), length(allIntervals)), 
+    type = "l", col = "red")
+legend("topright", c("Max"), lty = 1, col = c("red"), cex = 0.95)
+```
+
+![plot of chunk unnamed-chunk-20](figure/unnamed-chunk-20.png) 
+
+
+
+```r
+png(filename = "figures/plot3.png", width = 480, height = 480, units = "px")
+plot(allIntervals, meanStepByInterval$Steps, type = "l", main = "5-Interval step mean", 
+    xlab = "5-interval", ylab = "Mean of steps")
+lines(allIntervals, rep(max(meanStepByInterval$Steps), length(allIntervals)), 
+    type = "l", col = "red")
+legend("topright", c("Max"), lty = 1, col = c("red"), cex = 0.95)
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
+       
+Maxim mean of step in an <b>835</b> 5-minutes interval: 
+
+```r
+max(meanStepByInterval$Steps)
+```
+
+```
+## [1] 206.2
+```
+
+
+
+# Imputing missing values
+
+Now i going to complete the missing date in the raw data with simulated data.
+Copy the rawData
+
+```r
+simStepData <- rowStepData
+```
+
+
+Calculate the list of means split by date:
+
+```r
+meanSByDate <- sapply(splitDataByDate, mean)
+```
+
+
+Fill in the NA values with the mean of the day:
+
+```r
+for (i in 1:nrow(simStepData)) {
+    if (is.na(simStepData[i, 1])) {
+        date_i <- simStepData[i, 2]
+        simStepData[i, 1] <- meanSByDate[[as.factor(date_i)]]
+    }
+}
+```
+
+
+Now, with the new dataset, repeat the same to obtain the graphics:
+
+```r
+splitSimulatedDataByDate <- split(simStepData$steps, simStepData$date)
+
+sumSimulaStepByDate <- as.data.frame(sapply(splitSimulatedDataByDate, sum))
+names(sumSimulaStepByDate) <- c("Steps")
+mean(sumSimulaStepByDate$Steps)
+```
+
+```
+## [1] 9371
+```
+
+```r
+median(sumSimulaStepByDate$Steps)
+```
+
+```
+## [1] 10395
+```
+
+We can see that both the mean and the median decreased to fairly allocate data NA and put the average daily data. This is due to the large number of 0's that there now that make the mean and median decrease.
+
+Drawing the solution:
+
+```r
+hist(sumSimulaStepByDate$Steps, main = "Total steps by day frecuency", xlab = "Number of steps by day", 
+    ylab = "Number of days", col = "red", breaks = nrow(sumSimulaStepByDate))
+```
+
+![plot of chunk unnamed-chunk-27](figure/unnamed-chunk-27.png) 
+
+
+
+```r
+png(filename = "figures/plot4.png", width = 480, height = 480, units = "px")
+hist(sumSimulaStepByDate$Steps, main = "Total steps by day frecuency", xlab = "Number of steps by day", 
+    ylab = "Number of days", col = "red", breaks = nrow(sumSimulaStepByDate))
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
+ 
+ 
+
+```r
+allSimDays <- as.Date(sort(unique(simStepData$date)), format = "%Y-%m-%d")
+```
+
+
+
+```r
+plot(allSimDays, sumSimulaStepByDate$Steps, type = "l", ylab = "Sum of step", 
+    xlab = "Day")
+lines(allSimDays, rep(median(sumSimulaStepByDate$Steps), length(allSimDays)), 
+    type = "l", col = "blue")
+lines(allSimDays, rep(mean(sumSimulaStepByDate$Steps), length(allSimDays)), 
+    type = "l", col = "red")
+legend("topright", c("Mean", "Median"), lty = 1, col = c("red", "blue"), cex = 0.95)
+```
+
+![plot of chunk unnamed-chunk-30](figure/unnamed-chunk-30.png) 
+
+
+
+```r
+png(filename = "figures/plot5.png", width = 480, height = 480, units = "px")
+plot(allSimDays, sumSimulaStepByDate$Steps, type = "l", ylab = "Sum of step", 
+    xlab = "Day")
+lines(allSimDays, rep(median(sumSimulaStepByDate$Steps), length(allSimDays)), 
+    type = "l", col = "blue")
+lines(allSimDays, rep(mean(sumSimulaStepByDate$Steps), length(allSimDays)), 
+    type = "l", col = "red")
+legend("topright", c("Mean", "Median"), lty = 1, col = c("red", "blue"), cex = 0.95)
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
+
+# Are there differences in activity patterns between weekdays and weekends?
+ 
+
+I'm going to create a new variable in dataset called 'dateWeek' and put the value of day of the week (weekdays function)
+
+```r
+simStepData$dateWeek <- weekdays(simStepData$date)
+```
+
+..and now i'm going to compare if dateWeek is 'saturday' or 'sunday' ( 'sábado' ó 'domingo' in my Spanish version of OS) and put the correct factor ('Weekend or Weekday') depend on it.
+
+```r
+for (i in 1:nrow(simStepData)) {
+    if (simStepData[i, 4] == "domingo" | simStepData[i, 4] == "sábado") {
+        simStepData[i, 4] <- "Weekend"
+    } else {
+        simStepData[i, 4] <- "Weekday"
+    }
+}
+```
+
+
+Now i'm going to split the dataset by dateWeek and then separate inte two diferent datasets:
+
+```r
+weekDaySplit <- split(simStepData, simStepData$dateWeek)
+weekendData <- weekDaySplit[["Weekend"]]
+weekdayData <- weekDaySplit[["Weekday"]]
+```
+
+
+
+## First Method: basic system graph
+
+i'm going to create an other split in both datasets by Interval
+
+
+```r
+allweekendIntervals <- sort(unique(weekendData$interval))
+splitweekendDataByInterval <- split(weekendData$steps, weekendData$interval)
+
+allweekdayIntervals <- sort(unique(weekdayData$interval))
+splitweekdayDataByInterval <- split(weekdayData$steps, weekdayData$interval)
+```
+
+
+..and calculate the mean of steps for each interval..
+
+```r
+meanWeekendStepByInterval <- as.data.frame(sapply(splitweekendDataByInterval, 
+    mean))
+names(meanWeekendStepByInterval) <- c("Steps")
+
+meanWeekdayStepByInterval <- as.data.frame(sapply(splitweekdayDataByInterval, 
+    mean))
+names(meanWeekdayStepByInterval) <- c("Steps")
+```
+
+
+Drawing the solution: 
+
+Weekend
+
+```r
+plot(allIntervals, meanWeekendStepByInterval$Steps, type = "l", col = "blue", 
+    main = "Weekend. steps mean", xlab = "5-interval", ylab = "Mean of steps")
+```
+
+![plot of chunk unnamed-chunk-37](figure/unnamed-chunk-37.png) 
+
+
+
+```r
+png(filename = "figures/plot6.png", width = 480, height = 480, units = "px")
+plot(allIntervals, meanWeekendStepByInterval$Steps, type = "l", col = "blue", 
+    main = "Weekend. steps mean", xlab = "5-interval", ylab = "Mean of steps")
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
+
+Weekday
+
+```r
+plot(allIntervals, meanWeekdayStepByInterval$Steps, type = "l", col = "blue", 
+    main = "Weekday. steps mean", xlab = "5-interval", ylab = "Mean of steps")
+```
+
+![plot of chunk unnamed-chunk-39](figure/unnamed-chunk-39.png) 
+
+
+
+```r
+png(filename = "figures/plot7.png", width = 480, height = 480, units = "px")
+plot(allIntervals, meanWeekdayStepByInterval$Steps, type = "l", col = "blue", 
+    main = "Weekend. steps mean", xlab = "5-interval", ylab = "Mean of steps")
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
+
+
+## Second Method: lattice system graph
+
+
+
+I'm going to create a DataFrame with the mean step group by Interval and factor Weekday or Weekend:
+
+
+```r
+
+weInterval <- unique(sort(weekendData$interval))
+splitweekendDataIntervals <- split(weekendData$steps, weInterval)
+meanSplitweekendDataIntervals <- as.data.frame(sapply(splitweekendDataIntervals, 
+    mean))
+names(meanSplitweekendDataIntervals) <- "meanSteps"
+wEMatrixValues <- as.data.frame(cbind(meanSplitweekendDataIntervals$meanSteps, 
+    weInterval, "Weekend"))
+names(wEMatrixValues) <- c("meanSteps", "interval", "weekdate")
+
+wdInterval <- unique(sort(weekdayData$interval))
+splitweekdayDataIntervals <- split(weekdayData$steps, wdInterval)
+meanSplitweekdayDataIntervals <- as.data.frame(sapply(splitweekdayDataIntervals, 
+    mean))
+names(meanSplitweekdayDataIntervals) <- "meanSteps"
+wDMatrixValues <- as.data.frame(cbind(meanSplitweekdayDataIntervals$meanSteps, 
+    wdInterval, "Weekday"))
+names(wDMatrixValues) <- c("meanSteps", "interval", "weekdate")
+
+meanStepMatrix <- as.data.frame(rbind(wDMatrixValues, wEMatrixValues))
+meanStepMatrix$meanSteps <- as.numeric(as.character(meanStepMatrix$meanSteps))
+meanStepMatrix$interval <- as.numeric(as.character(meanStepMatrix$interval))
+```
+
+
+This is the final dataframe:
+
+```r
+head(meanStepMatrix)
+```
+
+```
+##   meanSteps interval weekdate
+## 1    2.0806        0  Weekday
+## 2    0.4583        5  Weekday
+## 3    0.2139       10  Weekday
+## 4    0.2361       15  Weekday
+## 5    0.1472       20  Weekday
+## 6    1.3694       25  Weekday
+```
+
+
+...and now i'm going to print it with 'lattice graph system':
+ - First create and print it
+
+```r
+library("lattice")
+p <- xyplot(meanStepMatrix$meanSteps ~ meanStepMatrix$interval | meanStepMatrix$weekdate, 
+    meanStepMatrix, layout = c(1, 2), type = "l", xlab = "Interval", ylab = "Number of steps")
+print(p)
+```
+
+![plot of chunk unnamed-chunk-43](figure/unnamed-chunk-43.png) 
+
+ - and now safe it:
+
+```r
+png(filename = "figures/plot8.png", width = 480, height = 480, units = "px")
+print(p)
+dev.off()
+```
+
+```
+## pdf 
+##   2
+```
+
